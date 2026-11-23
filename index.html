@@ -731,8 +731,6 @@
                 </span>
               </div>
 
-              <p id="gbMode" class="mt-3 text-[11px] text-navy/55 flex items-center gap-1.5"></p>
-
 
               <div id="gbLoading" class="hidden flex-1 flex-col items-center justify-center text-center py-14 gap-3 text-navy/60">
                 <span class="w-9 h-9 rounded-full border-2 border-gold/30 border-t-gold animate-spin"></span>
@@ -1162,21 +1160,6 @@
     let loading = SHARED && entries.length === 0;
     const gbList = $('#gbList');
 
-    // Dòng trạng thái dưới tiêu đề sổ lưu bút
-    (function setMode() {
-      const el = $('#gbMode');
-      const dot = document.createElement('span');
-      dot.className = 'inline-block w-1.5 h-1.5 rounded-full';
-      const t = document.createElement('span');
-      if (SHARED) {
-        dot.style.background = '#2D4739';
-        t.textContent = 'Sổ lưu bút chung của cả lớp · tự cập nhật';
-      } else {
-        dot.style.background = '#C59B27';
-        t.textContent = 'Đang chạy thử: lời chúc chỉ lưu trên máy này';
-      }
-      el.append(dot, t);
-    })();
 
     function buildItem(entry, fresh) {
       const li = document.createElement('li');
